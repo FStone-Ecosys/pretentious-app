@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pretentious App</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #e8e8e8;
+      --accent: #c9a227;
+      --muted: #666;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 480px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .subtitle {
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+    .button {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 1rem 2.5rem;
+      font-family: inherit;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+    .button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .counter {
+      font-size: 4rem;
+      font-weight: 100;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+    .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+    }
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pretentious App</h1>
+    <p class="subtitle">A monument to unnecessary elegance.</p>
+    <button class="button" id="btn">Elevate</button>
+    <div class="counter" id="count">0</div>
+    <div class="label">Units of Pretension</div>
+    <p class="footer">No data is collected. No purpose is served. This is intentional.</p>
+  </div>
+  <script>
+    let pretension = 0;
+    const btn = document.getElementById('btn');
+    const count = document.getElementById('count');
+    btn.addEventListener('click', () => {
+      pretension += 1;
+      count.textContent = pretension;
+      if (pretension % 10 === 0) {
+        btn.textContent = 'Transcend';
+      }
+    });
+  </script>
+</body>
+</html>
